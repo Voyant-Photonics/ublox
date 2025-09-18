@@ -3,6 +3,21 @@ The `ublox` package provides support for [u-blox](http://www.u-blox.com) GPS rec
 
 The driver was originally written by Johannes Meyer. Changes made later are detailed in the version history below.
 
+## Clone this repository
+
+```bash
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+git clone https://github.com/Voyant-Photonics/ublox.git
+```
+
+## Build the package
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select ublox # Optionally use --parallel-workers $(nproc) to speed up the build
+```
+
 ## Options
 
 Example .yaml configuration files are included in `ublox_gps/config`. Consult the u-blox documentation for your device for the recommended settings.

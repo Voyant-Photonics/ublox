@@ -3,6 +3,21 @@ The `ublox` package provides support for [u-blox](http://www.u-blox.com) GPS rec
 
 The driver was originally written by Johannes Meyer. Changes made later are detailed in the version history below.
 
+## Clone this repository
+
+```bash
+mkdir -p ~/ros2_ws/src
+cd ~/ros2_ws/src
+git clone https://github.com/Voyant-Photonics/ublox.git
+```
+
+## Build the package
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select ublox # Optionally use --parallel-workers $(nproc) to speed up the build
+```
+
 ## Options
 
 Example .yaml configuration files are included in `ublox_gps/config`. Consult the u-blox documentation for your device for the recommended settings.
@@ -199,6 +214,13 @@ To publish a given u-blox message to a ROS topic, set the parameter shown below 
 
 A sample launch file `ublox_device.launch` loads the parameters from a `.yaml` file in the `ublox_gps/config` folder, sample configuration files are included. The required arguments are `node_name` and `param_file_name`.
 The two topics to which you should subscribe are `~fix` and `~fix_velocity`. The angular component of `fix_velocity` is unused.
+
+## Version history (fork)
+
+- 2025-09-18 (maintenance):
+  - Bumped CMake minimum to 3.10 in `ublox`, `ublox_gps`, `ublox_msgs`, and `ublox_serialization` to silence CMake < 3.10 deprecation warnings.
+  - Fixed `-Wreorder` warning by reordering the member initializer list in [ublox_gps/src/adr_udr_product.cpp](cci:7://file:///home/yash/ros2_ws/src/ublox/ublox_gps/src/adr_udr_product.cpp:0:0-0:0) to match declarations in [include/ublox_gps/adr_udr_product.hpp](cci:7://file:///home/yash/ros2_ws/src/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:0:0-0:0).
+  - No functional changes intended; build and warnings cleanup only.
 
 # Version history
 

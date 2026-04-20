@@ -219,7 +219,7 @@ The two topics to which you should subscribe are `~fix` and `~fix_velocity`. The
 
 - 2025-09-18 (maintenance):
   - Bumped CMake minimum to 3.10 in `ublox`, `ublox_gps`, `ublox_msgs`, and `ublox_serialization` to silence CMake < 3.10 deprecation warnings.
-  - Fixed `-Wreorder` warning by reordering the member initializer list in [ublox_gps/src/adr_udr_product.cpp](cci:7://file:///home/yash/ros2_ws/src/ublox/ublox_gps/src/adr_udr_product.cpp:0:0-0:0) to match declarations in [include/ublox_gps/adr_udr_product.hpp](cci:7://file:///home/yash/ros2_ws/src/ublox/ublox_gps/include/ublox_gps/adr_udr_product.hpp:0:0-0:0).
+  - Fixed `-Wreorder` warning by reordering the member initializer list in [ublox_gps/src/adr_udr_product.cpp](ublox_gps/src/adr_udr_product.cpp) to match declarations in [include/ublox_gps/adr_udr_product.hpp](ublox_gps/include/ublox_gps/adr_udr_product.hpp).
   - No functional changes intended; build and warnings cleanup only.
 
 # Version history
